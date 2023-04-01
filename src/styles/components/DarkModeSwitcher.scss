@@ -1,0 +1,47 @@
+#darkmode__wrapper {
+  display: flex;
+  label {
+    width: 90px;
+    height: 43px;
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+    border-width: 0.5px;
+    border-style: solid;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-image: url("../../../public/assets/images/dark_moon.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 180px;
+    }
+
+    &, &:after {
+        transition: 2s
+    }
+  }
+
+  input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    &:checked + label {
+        background-color: #161616;
+    }
+    &:checked + label:after {
+        left: 66px;
+        transform: translateX(-10px);
+        background-image: url("../../../public/assets/images/light_moon.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  }
+}

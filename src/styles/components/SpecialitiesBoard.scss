@@ -1,0 +1,23 @@
+.specialities {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33.3%;
+        &__border {
+            width: 8px;
+            height: 310px;
+        }
+        &__title {
+            letter-spacing: 2px;
+            writing-mode: vertical-lr;
+            margin-left: 8px;
+            font-size: 20px;
+            transform: rotate(180deg);
+        }
+    }
+}
