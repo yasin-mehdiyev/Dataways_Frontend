@@ -18,6 +18,9 @@ import { Provider } from 'react-redux';
 // Helpers
 import { defaultLanguage } from './helpers/constants';
 
+// Bootstrap
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 i18next
   .use(HttpApi)
   .use(LanguageDetector)

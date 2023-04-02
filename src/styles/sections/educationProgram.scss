@@ -1,0 +1,100 @@
+.education__programs {
+    &__title {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 500;
+    }
+    .education__item {
+        &.active {
+            background: #161616;
+            cursor: default;
+            &:hover {
+                transform: translateX(0px);
+                span {
+                    opacity: 1;
+                }
+            }
+            span {
+                color: #FFFDFE;
+                opacity: 1;
+            }
+        }
+        cursor: pointer;
+        background: #FFFDFE;
+        border: 1px solid #161616;
+        border-radius: 10px;
+        padding: 8px 0px;
+        text-align: center;
+        transition: .5s ease-in-out;
+        &:hover {
+            transform: translateX(8px);
+            span {
+                opacity: .7;
+            }
+        }
+        span {
+            color: #161616;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 145%;
+            letter-spacing: 0.05em;
+            opacity: .4;
+        }
+    }
+    .more__info__wrapper {
+        padding: 25px 60px 45px;
+        .more__info__item {
+            margin-bottom: 32px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+            h4 {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 145%;
+                letter-spacing: 0.05em;
+                color: #161616;
+            }
+            .info {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 145%;
+                letter-spacing: 0.05em;
+                color: #000000;
+            }
+            .education__list {
+                li {
+                    margin-bottom: 13px;
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        border: 1px solid #161616;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .education__programs {
+        .more__info__wrapper {
+            padding: 25px 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .education__programs {
+        .more__info__wrapper {
+            padding: 25px 10px;
+        }
+    }
+}

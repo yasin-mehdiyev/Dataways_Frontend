@@ -4,7 +4,15 @@
 
 // Base
 @import "base/mode.scss";
+@import "base/common.scss";
 
 // Components
 @import "components/DarkModeSwitcher.scss";
 @import "components/SpecialitiesBoard.scss";
+@import "components/layout/Box.scss";
+@import "components/layout/Card.scss";
+
+// Sections
+@import "sections/aboutUs.scss";
+@import "sections/landing.scss";
+@import "sections/educationProgram.scss";
