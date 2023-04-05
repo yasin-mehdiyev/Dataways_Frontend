@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// Redux
+import { useSelector } from "react-redux";
 // Components
 import Navbar from "../../components/Layout/Navbar";
 import Input from "../../components/Layout/Input";
@@ -11,18 +13,27 @@ import DarkModeSwitcher from "../../components/DarkModeSwitcher";
 import SpecialitiesBoard from "../../components/SpecialitiesBoard";
 import EducationBoard from "../../components/EducationBoard";
 import LessonBoard from "../../components/LessonBoard";
+import SocialAccountsBoard from "../../components/SocialAccountsBoard";
 // Translation
 import { useTranslation } from "react-i18next";
+// React-icons
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 // Utilities
-import { languageSwitchers, specialities } from "../../helpers/constants";
+import {
+  languageSwitchers,
+  specialities,
+  socialMediaAccounts,
+} from "../../helpers/constants";
 import { educationBoard } from "../../helpers/educationBoard";
-
-// icons
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Home = () => {
   const { t: translate } = useTranslation();
+  const isDarkMode = useSelector((state) => state.mode.darkMode);
 
-  const [activeEducationIndex, setActiveEducationIndex] = useState(educationBoard[0].id);
+  const [activeEducationIndex, setActiveEducationIndex] = useState(
+    educationBoard[0].id
+  );
 
   const hanleChangeEducation = (id) => {
     if (id !== activeEducationIndex) {
@@ -30,7 +41,9 @@ const Home = () => {
     }
   };
 
-  const findActiveEducationMore = educationBoard?.find((education) => education.id === activeEducationIndex);
+  const findActiveEducationMore = educationBoard?.find(
+    (education) => education.id === activeEducationIndex
+  );
   const { moreInfo } = findActiveEducationMore;
 
   return (
@@ -44,22 +57,22 @@ const Home = () => {
             <div className="col-lg-6">
               <div className="landing__boxer">
                 <h1>
-                  <span>Öyrənin, İnkişaf Edin, Uğura Yol Açın:</span> <br />
-                  <span>Onlayn Dərsləriniz Üçün Etibarlı Seçim!</span>
+                  <span>{translate("app_landing_title_text")}</span> <br />
+                  <span>{translate("app_landing_title_content")}</span>
                 </h1>
-                <p>
-                  Dataways.az ailəsinə qoşulun və dünyanın hər yerindən
-                  müəllimlər və sənaye ekspertləri ilə əməkdaşlıq etmək, yeni
-                  bacarıqlar öyrənmək və uğurlu karyera qazanmaq şansını əldə
-                  edin.
-                </p>
+                <p>{translate("app_landing_content")}</p>
                 <div className="contact__us__btn">
-                  <Button content={"Bizimlə Əlaqə"} />
+                  <Button content={translate("app_contact_us")} />
                 </div>
               </div>
             </div>
             <div className="col-lg-6 d-flex justify-content-center justify-content-lg-end">
               <SpecialitiesBoard specialities={specialities} />
+            </div>
+            <div className="col-lg-12 d-none d-lg-flex justify-content-lg-center align-items-center">
+              <div className="mt-80">
+                <ScrollToTop handleClick={() => window.scrollTo({top: 600, left: 0, behavior: 'smooth'})} icon={<AiOutlineArrowDown />} />
+              </div>
             </div>
           </div>
         </div>
@@ -77,35 +90,14 @@ const Home = () => {
             </div>
             <div className="order-1 col-lg-6 offset-lg-1 order-lg-2">
               <div className="about__us__content">
-                <h2>Haqqımızda</h2>
+                <h2 className={`${isDarkMode ? "color__light" : ""}`}>
+                  {translate("app_about_title")}
+                </h2>
                 <p>
                   {" "}
-                  <span>
-                    Dataways.az 2023-cü ildən etibarən Azərbaycanda fəaliyyət
-                    göstərən online tədris platformasıdır. Biz, tələbələrimiz
-                    üçün daha sərfəli kurs qiymətləri təklif etmək məqsədilə
-                    dərslərimizi onlayn keçiririk. Bu, həm tələbələrimizin
-                    dünyanın hər yerindən peşəkar müəllimlər tapmasına, həm də
-                    bizim tələbələrimizi ölkə xaricindəki iş imkanlarına
-                    yönləndirməyə imkan verir.
-                  </span>{" "}
-                  <br />
-                  <span>
-                    Dərslərimiz əsasən Proqramlaşdırma, Dizayn, Digital
-                    Marketinq və İT sahələrində keçirilir. Tələbələrimizin
-                    uğurlu karyeraya başlamağa və dünya miqyasında inkişaf
-                    etməyə kömək etmək ən başlıca məqsədimizdir. Dataways.az,
-                    sənədləşdirilmiş biliklər, təcrübəli müəllimlər və praktiki
-                    təlimatlar təklif edərək hər tələbə üçün fərdi inkişaf
-                    imkanları yaradır.
-                  </span>{" "}
-                  <br />
-                  <span>
-                    Dataways.az ailəsinə qoşulun və dünyanın hər yerindən
-                    müəllimlər və sənaye ekspertləri ilə əməkdaşlıq etmək, yeni
-                    bacarıqlar öyrənmək və uğurlu karyera qazanmaq şansını əldə
-                    edin.
-                  </span>
+                  <span>{translate("app_about_content_up")}</span> <br />
+                  <span>{translate("app_about_content_middle")}</span> <br />
+                  <span>{translate("app_about_content_down")}</span>
                 </p>
               </div>
             </div>
@@ -119,22 +111,29 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 mb-4">
-              <h2 className="education__programs__title">Tədris Proqramları</h2>
+              <h2 className="education__programs__title">
+                {translate("app_education_programs_title")}
+              </h2>
             </div>
           </div>
 
           <div className="row mb-5">
-            {
-              educationBoard.length && (
-                educationBoard.map(({ id, name}) => {
-                  return(
-                    <div className="col-lg-4 mb-3" key={id} onClick={() => hanleChangeEducation(id)}>
-                      <EducationBoard lessonId={id} lesson={name} activeLessonIndex={activeEducationIndex} />
-                    </div>
-                  )
-                })
-              )
-            }
+            {educationBoard.length &&
+              educationBoard.map(({ id, name }) => {
+                return (
+                  <div
+                    className="col-lg-4 mb-3"
+                    key={id}
+                    onClick={() => hanleChangeEducation(id)}
+                  >
+                    <EducationBoard
+                      lessonId={id}
+                      lesson={name}
+                      activeLessonIndex={activeEducationIndex}
+                    />
+                  </div>
+                );
+              })}
           </div>
 
           <div className="row">
@@ -142,30 +141,37 @@ const Home = () => {
               <Box>
                 <div className="more__info__wrapper">
                   <div className="more__info__item">
-                      <h4>{moreInfo?.generalInfo?.title}</h4>
-                      <Card>
-                        <span className="info">{moreInfo?.generalInfo?.description}</span>
-                      </Card>
+                    <h4>{translate(moreInfo?.generalInfo?.title)}</h4>
+                    <Card>
+                      <span
+                        className={`info ${isDarkMode ? "color__light" : ""}`}
+                      >
+                        {translate(moreInfo?.generalInfo?.description)}
+                      </span>
+                    </Card>
                   </div>
                   <div className="more__info__item">
-                      <h4>{moreInfo?.studyDuration?.description}</h4>
-                      <Card>
-                        <span className="info">{moreInfo?.studyDuration?.description}</span>
-                      </Card>
+                    <h4>{translate(moreInfo?.studyDuration?.description)}</h4>
+                    <Card>
+                      <span
+                        className={`info ${isDarkMode ? "color__light" : ""}`}
+                      >
+                        {translate(moreInfo?.studyDuration?.description)}
+                      </span>
+                    </Card>
                   </div>
                   <div className="more__info__item">
-                      <h4>{moreInfo?.studyPlan?.title}</h4>
-                      <Card>
-                        <ul className="education__list">
-                          {
-                            moreInfo?.studyPlan?.lessonList?.length && (
-                              moreInfo?.studyPlan?.lessonList?.map(({ id, name }) => {
-                                return <LessonBoard key={id} name={name} />
-                              })
-                            )
-                          }
-                        </ul>
-                      </Card>
+                    <h4>{translate(moreInfo?.studyPlan?.title)}</h4>
+                    <Card>
+                      <ul className="education__list">
+                        {moreInfo?.studyPlan?.lessonList?.length &&
+                          moreInfo?.studyPlan?.lessonList?.map(
+                            ({ id, name }) => {
+                              return <LessonBoard key={id} name={name} />;
+                            }
+                          )}
+                      </ul>
+                    </Card>
                   </div>
                 </div>
               </Box>
@@ -175,13 +181,101 @@ const Home = () => {
       </Section>
       {/* END ------ Education Section -------- END  */}
 
+      {/* Start------Contact Section----------Start */}
+      <Section wrapperClassName="contact__wrapper">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h2 className="head__title">{translate("app_contact_us")}</h2>
+            </div>
+          </div>
+
+          <Box>
+            <div className="row">
+              <div className="col-lg-5">
+                <form className="form__input">
+                  <Input
+                    type="text"
+                    placeholder={translate("app_contact_name")}
+                  />
+                  <Input
+                    type="text"
+                    placeholder={translate("app_contact_surname")}
+                  />
+                  <Input
+                    type="text"
+                    placeholder={translate("app_contact_phone_or_mail")}
+                  />
+                  <textarea
+                    placeholder={translate("app_contact_help")}
+                    rows={7}
+                    className={`${ isDarkMode ? "bg__dark" : "" }`} />
+                  <div className="text-center">
+                    <Button
+                      content={translate("app_contact_send_us")}
+                      handleClick={(e) => e.preventDefault()}
+                    />
+                  </div>
+                </form>
+              </div>
+              <div className="col-lg-7">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <div className="contact__title">
+                      <h2>
+                        <span>{translate("app_contact_us_question_one")} </span>
+                        <span>
+                          {" "}
+                          {translate("app_contact_us_question_last")}
+                        </span>
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div className="row mt-4 sm:mt-0">
+                  <div className="col-lg-12 d-flex justify-content-center align-items-center">
+                    <span className="text-gray-400 text-[16px] font-medium">
+                      {translate("app_contact_us_find_us")}
+                    </span>
+                  </div>
+                </div>
+                <div className="row mt-4 d-flex justify-content-center align-items-center">
+                  {socialMediaAccounts.length &&
+                    socialMediaAccounts.map((item) => {
+                      return <SocialAccountsBoard key={item.id} {...item} />
+                    })}
+                </div>
+              </div>
+            </div>
+          </Box>
+        </div>
+      </Section>
+      {/* START ------ Contact Section ---------- START */}
+
+      {/* START ------ ScrollToTop Section ---------- START */}
+      <Section wrapperClassName="scroll__to__top__wrapper d-none d-lg-flex">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 d-flex justify-content-end">
+              <ScrollToTop handleClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} icon={<AiOutlineArrowUp />} />
+            </div>
+          </div>
+        </div>
+      </Section>
+      {/* END ------ ScrollToTop Section ---------- END */}
+
       {/*  START ------ Footer Section -------- START */}
       <Box>
         <footer>
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-3 d-none d-lg-flex align-items-center justify-content-center">
-                <img src="/assets/images/logo_footer.svg" alt="Dataways.az" />
+                <img
+                  src={`/assets/images/logo_footer_${
+                    isDarkMode ? "dark" : "light"
+                  }.svg`}
+                  alt="Dataways.az"
+                />
               </div>
               <div className="col-lg-6 d-flex align-items-center justify-content-center">
                 <span>© Dataways.az</span>

@@ -1,3 +1,7 @@
+// React Icons
+import { BsWhatsapp, BsInstagram } from "react-icons/bs";
+import { AiOutlineMail, AiOutlineLinkedin } from "react-icons/ai";
+
 export const languageSwitchers = [
     {
         id: "1",
@@ -19,8 +23,8 @@ export const languageSwitchers = [
 export const defaultLanguage = "az";
 
 export const colorMode = {
-    LIGHT_MODE: "#fff",
-    DARK_MOOE: "#161616"
+    LIGHT_MODE: "#FFFDFE",
+    DARK_MOOE: "#1E1E1E"
 };
 
 export const specialities = [
@@ -37,3 +41,30 @@ export const specialities = [
         name: "app_digital_marketing"
     }
 ];
+
+export const socialMediaAccounts = [
+    {
+        id: "1",
+        icon: <BsWhatsapp />,
+        content: "+994504282230",
+        url: "https://wa.me/994504282230"
+    },
+    {
+        id: "2",
+        icon: <AiOutlineMail />,
+        content: "dataways.aze@gmail.com",
+        url: ""
+    },
+    {
+        id: "3",
+        icon: <BsInstagram />,
+        content: "dataways.az",
+        url: "https://www.instagram.com/dataways.az/"
+    },
+    {
+        id: "4",
+        icon: <AiOutlineLinkedin />,
+        content: "dataways.az",
+        url: "https://www.linkedin.com/company/dataways-az/"
+    }
+]

@@ -1,0 +1,30 @@
+.navbar__error__page {
+    padding: 12px 0px 2px;
+    .custom__py__20 {
+        padding: 20px 40px;
+    }
+    .more__features {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        span {
+            margin-right: 24px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .navbar__error__page {
+        .custom__py__20 {
+            padding: 20px 10px;
+        }
+        .more__features {
+            span {
+                margin-right: 16px;
+            }
+        }
+    }
+}

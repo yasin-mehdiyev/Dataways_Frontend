@@ -1,0 +1,39 @@
+.scroll__to__top__wrapper {
+  padding: 0px 0px 50px 0px;
+}
+
+.scroll__to__top__item {
+  &.active__dark__mode {
+    border: 3px solid #fff;
+    svg {
+      color: #fff;
+    }
+  }
+
+  width: 35px;
+  height: 35px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 1;
+  animation: translateY 2s linear infinite;
+  svg {
+    font-size: 19px;
+    color: #000;
+  }
+}
+
+@keyframes translateY {
+  from {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+
+  to {
+    transform: translateY(-15px);
+    opacity: 0.3;
+  }
+}

@@ -7,12 +7,21 @@
 @import "base/common.scss";
 
 // Components
-@import "components/DarkModeSwitcher.scss";
-@import "components/SpecialitiesBoard.scss";
 @import "components/layout/Box.scss";
 @import "components/layout/Card.scss";
+@import "components/layout/Button.scss";
+@import "components/layout//NavbarSimple.scss";
+@import "components/layout/Input.scss";
+@import "components/DarkModeSwitcher.scss";
+@import "components/SpecialitiesBoard.scss";
+@import "components/SocialAccountsBoard.scss";
+@import "components/ScrollToTop.scss";
 
 // Sections
 @import "sections/aboutUs.scss";
 @import "sections/landing.scss";
 @import "sections/educationProgram.scss";
+@import "sections/contact.scss";
+
+// Pages
+@import "pages/404.scss";

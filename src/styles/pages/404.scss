@@ -1,0 +1,30 @@
+.not__found__wrapper {
+    padding: 0px;
+    text-align: center;
+    .error__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .error__text {
+        margin-bottom: 50px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 145%;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #161616;
+    }
+}
+
+
+@media only screen and (max-width: 620px) {
+    .not__found__wrapper {
+        .error__text {
+            padding: 0px 50px;
+        }
+        .come__back {
+            padding-bottom: 25px;
+        }
+    }
+}

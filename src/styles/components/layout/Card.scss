@@ -3,4 +3,7 @@
     border: 0.5px solid rgba(35, 31, 32, 0.2);
     border-radius: 10px;
     padding: 10px;
+    &.dark__mode__border {
+        border: 0.5px solid rgba(255, 253, 254, 0.2);
+    }
 }

@@ -14,7 +14,7 @@ const SpecialitiesBoard = ({ specialities }) => {
     <div className="specialities">
       {specialities?.length &&
         specialities.map(({ id, name }) => {
-            const _name = translate(name);
+          const _name = translate(name);
           return (
             <div key={id} className="specialities__item">
               <div className={`specialities__item__border ${isDarkMode ? "bg__light" : "bg__dark"}`}></div>

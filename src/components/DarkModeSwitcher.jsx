@@ -22,6 +22,7 @@ const DarkModeSwitcher = () => {
         type="checkbox"
         id="darkmode__switcher"
         onChange={() => dispatch(togglerDarkMode(!isDarkMode))}
+        checked={isDarkMode}
       />
       <label htmlFor="darkmode__switcher" style={ isDarkMode ? { borderColor: "rgb(255 255 255 / 50%)" } : { borderColor: "rgba(0, 0, 0, 0.5)" }}></label>
     </div>
