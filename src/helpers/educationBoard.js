@@ -60,7 +60,7 @@ export const educationBoard = [
     moreInfo: {
       generalInfo: {
         title: "app_general_info_back_title",
-        description: "app_empty",
+        description: "app_general_info_back_desc",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
@@ -99,7 +99,7 @@ export const educationBoard = [
     moreInfo: {
       generalInfo: {
         title: "app_general_info_int_design_title",
-        description: "app_empty",
+        description: "app_general_info_int_design_desc",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
@@ -134,7 +134,7 @@ export const educationBoard = [
     moreInfo: {
       generalInfo: {
         title: "app_general_info_graphic_title",
-        description: "app_empty",
+        description: "app_general_info_graphic_desc",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
@@ -192,20 +192,52 @@ export const educationBoard = [
     name: "app_sql",
     moreInfo: {
       generalInfo: {
-        title: "app_general_info_sql",
-        description: "app_empty",
+        title: "app_general_info_sql_title",
+        description: "app_general_info_sql_desc",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description: "app_empty",
+        description: "app_study_duration_sql_desc",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "app_empty",
+            name: "app_study_plan_sql_lesson_info",
           },
+          {
+            id: "2",
+            name: "app_study_plan_sql_lesson_syntax",
+          },
+          {
+            id: "3",
+            name: "app_study_plan_sql_lesson_query",
+          },
+          {
+            id: "4",
+            name: "app_study_plan_sql_lesson_join",
+          },
+          {
+            id: "5",
+            name: "app_study_plan_sql_lesson_function",
+          },
+          {
+            id: "6",
+            name: "app_study_plan_sql_lesson_manage",
+          },
+          {
+            id: "7",
+            name: "app_study_plan_sql_lesson_t_sql",
+          },
+          {
+            id: "8",
+            name: "app_study_plan_sql_lesson_other_functions",
+          },
+          {
+            id: "9",
+            name: "app_study_plan_sql_lesson_sql_apply",
+          }
         ],
       },
     },
@@ -215,20 +247,36 @@ export const educationBoard = [
     name: "app_data_analytic",
     moreInfo: {
       generalInfo: {
-        title: "Data Analitika nədir?",
-        description: "app_empty",
+        title: "app_general_info_data_title",
+        description: "app_general_info_data_desc",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description: "app_empty",
+        description: "app_study_duration_data_desc",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "app_empty",
+            name: "app_study_plan_data_lesson_sql",
           },
+          {
+            id: "2",
+            name: "app_study_plan_data_lesson_excel",
+          },
+          {
+            id: "3",
+            name: "app_study_plan_data_lesson_statistic",
+          },
+          {
+            id: "4",
+            name: "app_study_plan_data_lesson_tableau",
+          },
+          {
+            id: "5",
+            name: "app_study_plan_data_lesson_python",
+          }
         ],
       },
     },

@@ -20,7 +20,7 @@ const SpecialitiesBoard = ({ specialities }) => {
               <div className={`specialities__item__border ${isDarkMode ? "bg__light" : "bg__dark"}`}></div>
               <div className={`specialities__item__title ${isDarkMode ? "color__light" : "color__dark"}`}>
                 <Typical
-                  steps={["", 1000, _name, 4000]}
+                  steps={["", 1000, _name, 500]}
                   loop={Infinity}
                   wrapper="p"
                 />
