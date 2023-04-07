@@ -10,10 +10,10 @@ const DarkModeSwitcher = () => {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.body.style = `background: ${colorMode.DARK_MOOE}; color: ${colorMode.LIGHT_MODE} !important; transition: .7s`;
+      document.body.style = `background: ${colorMode.DARK_MOOE}; color: ${colorMode.LIGHT_MODE} !important; transition: .5s background`;
       return;
     }
-    document.body.style = `background: ${colorMode.LIGHT_MODE}; transition: .7s`;
+    document.body.style = `background: ${colorMode.LIGHT_MODE}; transition: .5s background`;
   }, [isDarkMode]);
 
   return (

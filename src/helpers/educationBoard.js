@@ -5,11 +5,11 @@ export const educationBoard = [
     moreInfo: {
       generalInfo: {
         title: "app_general_info_front_title",
-        description: "app_general_info_front_desc"
+        description: "app_general_info_front_desc",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description: "app_study_duration_front_desc"
+        description: "app_study_duration_front_desc",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
@@ -59,53 +59,35 @@ export const educationBoard = [
     name: "app_backend",
     moreInfo: {
       generalInfo: {
-        title: "Back-end Proqramlaşdırma nədir?",
-        description:
-          "Back-end veb saytın istifadəçi tərəfindən görünməyən hissəsinin kodlaşdıırlmasıdır. Buna buttonlar, inputlar, textlər, şəkillər və s. aiddir.",
+        title: "app_general_info_back_title",
+        description: "app_empty",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description:
-          "Online Back - End dərsləri 6 ay ərzində həftədə 3 dəfə 2 saat olmaqla online tədris olunur.",
+        description: "app_study_duration_back_desc",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "HTML (Hypertext Markup Language) - Veb səhifələrinin quruluşunu təşkil etmək üçün istifadə olunan standart işarələşdirmə dili.",
+            name: "app_study_plan_back_lesson_spring",
           },
           {
             id: "2",
-            name: "CSS (Cascading Style Sheets) - Veb səhifələrinin dizayn və görünüşünü təyin etmək üçün istifadə olunan stil şablonları dili.",
+            name: "app_study_plan_back_lesson_hibernate",
           },
           {
             id: "3",
-            name: "JavaScript (JS) - Veb səhifələrinə interaktivlik əlavə etmək üçün istifadə olunan proqramlaşdırma dili.",
+            name: "app_study_plan_back_lesson_restful",
           },
           {
             id: "4",
-            name: "CSS və JS kitabxanaları və çərçivələri",
+            name: "app_study_plan_back_lesson_security",
           },
           {
             id: "5",
-            name: "Bootstrap, Tailwind CSS, Materialize (CSS kitabxanaları)",
-          },
-          {
-            id: "6",
-            name: "React və React texnologiyaları",
-          },
-          {
-            id: "7",
-            name: "Versiya nəzarət sistemləri",
-          },
-          {
-            id: "8",
-            name: "Git və GitHub",
-          },
-          {
-            id: "9",
-            name: "Responsive Dizayn",
+            name: "app_study_plan_back_lesson_builds",
           },
         ],
       },
@@ -116,53 +98,31 @@ export const educationBoard = [
     name: "app_interier_design",
     moreInfo: {
       generalInfo: {
-        title: "İnteryer Dizayn nədir?",
-        description:
-          "Front-end veb saytın istifadəçi tərəfindən görülən hissəsinin kodlaşdıırlmasıdır. Buna buttonlar, inputlar, textlər, şəkillər və s. aiddir.",
+        title: "app_general_info_int_design_title",
+        description: "app_empty",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description:
-          "Online Front - End dərsləri 6 ay ərzində həftədə 3 dəfə 2 saat olmaqla online tədris olunur.",
+        description: "app_study_duration_int_design_desc",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "HTML (Hypertext Markup Language) - Veb səhifələrinin quruluşunu təşkil etmək üçün istifadə olunan standart işarələşdirmə dili.",
+            name: "app_study_plan_int_design_lesson_autocad",
           },
           {
             id: "2",
-            name: "CSS (Cascading Style Sheets) - Veb səhifələrinin dizayn və görünüşünü təyin etmək üçün istifadə olunan stil şablonları dili.",
+            name: "app_study_plan_int_design_lesson_3ds",
           },
           {
             id: "3",
-            name: "JavaScript (JS) - Veb səhifələrinə interaktivlik əlavə etmək üçün istifadə olunan proqramlaşdırma dili.",
+            name: "app_study_plan_int_design_lesson_corona",
           },
           {
             id: "4",
-            name: "CSS və JS kitabxanaları və çərçivələri",
-          },
-          {
-            id: "5",
-            name: "Bootstrap, Tailwind CSS, Materialize (CSS kitabxanaları)",
-          },
-          {
-            id: "6",
-            name: "React və React texnologiyaları",
-          },
-          {
-            id: "7",
-            name: "Versiya nəzarət sistemləri",
-          },
-          {
-            id: "8",
-            name: "Git və GitHub",
-          },
-          {
-            id: "9",
-            name: "Responsive Dizayn",
+            name: "app_study_plan_int_design_lesson_adobe",
           },
         ],
       },
@@ -173,53 +133,55 @@ export const educationBoard = [
     name: "app_graphic_design",
     moreInfo: {
       generalInfo: {
-        title: "Qrafik Dizayn nədir?",
-        description:
-          "Front-end veb saytın istifadəçi tərəfindən görülən hissəsinin kodlaşdıırlmasıdır. Buna buttonlar, inputlar, textlər, şəkillər və s. aiddir.",
+        title: "app_general_info_graphic_title",
+        description: "app_empty",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description:
-          "Online Front - End dərsləri 6 ay ərzində həftədə 3 dəfə 2 saat olmaqla online tədris olunur.",
+        description: "app_study_duration_graphic_desc",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "HTML (Hypertext Markup Language) - Veb səhifələrinin quruluşunu təşkil etmək üçün istifadə olunan standart işarələşdirmə dili.",
+            name: "app_study_plan_graphic_lesson_photoshop",
           },
           {
             id: "2",
-            name: "CSS (Cascading Style Sheets) - Veb səhifələrinin dizayn və görünüşünü təyin etmək üçün istifadə olunan stil şablonları dili.",
+            name: "app_study_plan_graphic_lesson_illustrator",
           },
           {
             id: "3",
-            name: "JavaScript (JS) - Veb səhifələrinə interaktivlik əlavə etmək üçün istifadə olunan proqramlaşdırma dili.",
+            name: "app_study_plan_graphic_lesson_indesign",
           },
           {
             id: "4",
-            name: "CSS və JS kitabxanaları və çərçivələri",
+            name: "app_study_plan_graphic_lesson_logo",
           },
           {
             id: "5",
-            name: "Bootstrap, Tailwind CSS, Materialize (CSS kitabxanaları)",
+            name: "app_study_plan_graphic_lesson_print",
           },
           {
             id: "6",
-            name: "React və React texnologiyaları",
+            name: "app_study_plan_graphic_lesson_tipography",
           },
           {
             id: "7",
-            name: "Versiya nəzarət sistemləri",
+            name: "app_study_plan_graphic_lesson_colors",
           },
           {
             id: "8",
-            name: "Git və GitHub",
+            name: "app_study_plan_graphic_lesson_social_medias",
           },
           {
             id: "9",
-            name: "Responsive Dizayn",
+            name: "app_study_plan_graphic_lesson_brend_books",
+          },
+          {
+            id: "10",
+            name: "app_study_plan_graphic_lesson_portfolio",
           },
         ],
       },
@@ -230,53 +192,19 @@ export const educationBoard = [
     name: "app_sql",
     moreInfo: {
       generalInfo: {
-        title: "SQL nədir?",
-        description:
-          "Front-end veb saytın istifadəçi tərəfindən görülən hissəsinin kodlaşdıırlmasıdır. Buna buttonlar, inputlar, textlər, şəkillər və s. aiddir.",
+        title: "app_general_info_sql",
+        description: "app_empty",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description:
-          "Online Front - End dərsləri 6 ay ərzində həftədə 3 dəfə 2 saat olmaqla online tədris olunur.",
+        description: "app_empty",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "HTML (Hypertext Markup Language) - Veb səhifələrinin quruluşunu təşkil etmək üçün istifadə olunan standart işarələşdirmə dili.",
-          },
-          {
-            id: "2",
-            name: "CSS (Cascading Style Sheets) - Veb səhifələrinin dizayn və görünüşünü təyin etmək üçün istifadə olunan stil şablonları dili.",
-          },
-          {
-            id: "3",
-            name: "JavaScript (JS) - Veb səhifələrinə interaktivlik əlavə etmək üçün istifadə olunan proqramlaşdırma dili.",
-          },
-          {
-            id: "4",
-            name: "CSS və JS kitabxanaları və çərçivələri",
-          },
-          {
-            id: "5",
-            name: "Bootstrap, Tailwind CSS, Materialize (CSS kitabxanaları)",
-          },
-          {
-            id: "6",
-            name: "React və React texnologiyaları",
-          },
-          {
-            id: "7",
-            name: "Versiya nəzarət sistemləri",
-          },
-          {
-            id: "8",
-            name: "Git və GitHub",
-          },
-          {
-            id: "9",
-            name: "Responsive Dizayn",
+            name: "app_empty",
           },
         ],
       },
@@ -288,52 +216,18 @@ export const educationBoard = [
     moreInfo: {
       generalInfo: {
         title: "Data Analitika nədir?",
-        description:
-          "Front-end veb saytın istifadəçi tərəfindən görülən hissəsinin kodlaşdıırlmasıdır. Buna buttonlar, inputlar, textlər, şəkillər və s. aiddir.",
+        description: "app_empty",
       },
       studyDuration: {
         title: "app_study_duration_front_title",
-        description:
-          "Online Front - End dərsləri 6 ay ərzində həftədə 3 dəfə 2 saat olmaqla online tədris olunur.",
+        description: "app_empty",
       },
       studyPlan: {
         title: "app_study_plan_front_title",
         lessonList: [
           {
             id: "1",
-            name: "HTML (Hypertext Markup Language) - Veb səhifələrinin quruluşunu təşkil etmək üçün istifadə olunan standart işarələşdirmə dili.",
-          },
-          {
-            id: "2",
-            name: "CSS (Cascading Style Sheets) - Veb səhifələrinin dizayn və görünüşünü təyin etmək üçün istifadə olunan stil şablonları dili.",
-          },
-          {
-            id: "3",
-            name: "JavaScript (JS) - Veb səhifələrinə interaktivlik əlavə etmək üçün istifadə olunan proqramlaşdırma dili.",
-          },
-          {
-            id: "4",
-            name: "CSS və JS kitabxanaları və çərçivələri",
-          },
-          {
-            id: "5",
-            name: "Bootstrap, Tailwind CSS, Materialize (CSS kitabxanaları)",
-          },
-          {
-            id: "6",
-            name: "React və React texnologiyaları",
-          },
-          {
-            id: "7",
-            name: "Versiya nəzarət sistemləri",
-          },
-          {
-            id: "8",
-            name: "Git və GitHub",
-          },
-          {
-            id: "9",
-            name: "Responsive Dizayn",
+            name: "app_empty",
           },
         ],
       },

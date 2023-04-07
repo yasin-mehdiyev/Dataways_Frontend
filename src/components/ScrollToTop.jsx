@@ -1,15 +1,28 @@
-import React from 'react';
+import React from "react";
 // Redux
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
+// React-Scroll
+import { Link } from "react-scroll";
 
-const ScrollToTop = ({ handleClick, icon }) => {
+const ScrollToTop = ({ sectionName, icon }) => {
   const isDarkMode = useSelector((state) => state.mode.darkMode);
 
   return (
     <>
-      <span className={`scroll__to__top__item ${ isDarkMode ? "active__dark__mode" : "" }`} onClick={handleClick}>{icon}</span>
+      <Link
+        className={`scroll__to__top__item ${
+          isDarkMode ? "active__dark__mode" : ""
+        }`}
+        to={sectionName || ""}
+        spy={true}
+        smooth={true}
+        offset={-150}
+        duration={500}
+      >
+        {icon}
+      </Link>
     </>
-  )
-}
+  );
+};
 
-export default ScrollToTop
+export default ScrollToTop;

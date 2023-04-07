@@ -1,0 +1,36 @@
+.navbar__wrapper {
+  position: relative;
+  z-index: 9999999999;
+  &.fixed__navbar_animate {
+    margin-top: 12px;
+  }
+  .fixed__navbar {
+    position: fixed;
+  }
+  nav {
+    &.bg__dark__active {
+      background-color: #1e1e1e !important;
+    }
+    &.bg__light__active {
+      background-color: #fffdfe !important;
+    }
+    .navbar__menu {
+      li {
+        transition: 0.5s all ease-in-out;
+        &:hover {
+          transform: translateX(10px);
+          a {
+            opacity: 0.5;
+            cursor: pointer;
+          }
+        }
+        a {
+          color: #161616 !important;
+          &.active__dark {
+            color: #ffffff !important;
+          }
+        }
+      }
+    }
+  }
+}

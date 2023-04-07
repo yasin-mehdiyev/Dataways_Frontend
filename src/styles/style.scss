@@ -5,11 +5,13 @@
 // Base
 @import "base/mode.scss";
 @import "base/common.scss";
+@import "base/scrollbar.scss";
 
 // Components
 @import "components/layout/Box.scss";
 @import "components/layout/Card.scss";
 @import "components/layout/Button.scss";
+@import "components/layout/Navbar.scss";
 @import "components/layout//NavbarSimple.scss";
 @import "components/layout/Input.scss";
 @import "components/DarkModeSwitcher.scss";

@@ -14,6 +14,7 @@ import SpecialitiesBoard from "../../components/SpecialitiesBoard";
 import EducationBoard from "../../components/EducationBoard";
 import LessonBoard from "../../components/LessonBoard";
 import SocialAccountsBoard from "../../components/SocialAccountsBoard";
+import ScrollToTop from "../../components/ScrollToTop";
 // Translation
 import { useTranslation } from "react-i18next";
 // React-icons
@@ -25,7 +26,6 @@ import {
   socialMediaAccounts,
 } from "../../helpers/constants";
 import { educationBoard } from "../../helpers/educationBoard";
-import ScrollToTop from "../../components/ScrollToTop";
 
 const Home = () => {
   const { t: translate } = useTranslation();
@@ -48,7 +48,9 @@ const Home = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      {/*  START ------ NAVBAR -------- START */}
+        <Navbar />
+      {/*  END -------- NAVBAR ---------- END */}
 
       {/*  START ------ Landing Section -------- START */}
       <Section wrapperClassName="landing__wrapper">
@@ -71,7 +73,7 @@ const Home = () => {
             </div>
             <div className="col-lg-12 d-none d-lg-flex justify-content-lg-center align-items-center">
               <div className="mt-80">
-                <ScrollToTop handleClick={() => window.scrollTo({top: 600, left: 0, behavior: 'smooth'})} icon={<AiOutlineArrowDown />} />
+                <ScrollToTop sectionName={"about__us"} icon={<AiOutlineArrowDown />} />
               </div>
             </div>
           </div>
@@ -80,12 +82,12 @@ const Home = () => {
       {/*  END ------ Landing Section -------- END */}
 
       {/*  START ------ About Section -------- START */}
-      <Section wrapperClassName="about__us">
+      <Section wrapperClassName="about__us" wrapperId="about__us">
         <div className="container">
           <div className="row">
             <div className="order-2 col-lg-5 order-lg-1 d-flex align-items-center">
               <div className="image__wrapper">
-                <img src="/assets/images/about_us.gif" alt="Dataways.az" />
+                <img src={`/assets/images/${ isDarkMode ? "dataways_logo_gif" : "about_us" }.gif`} alt="Dataways.az" />
               </div>
             </div>
             <div className="order-1 col-lg-6 offset-lg-1 order-lg-2">
@@ -107,7 +109,7 @@ const Home = () => {
       {/*  END ------ About Section -------- END */}
 
       {/* START ------ Education Section -------- START  */}
-      <Section wrapperClassName="education__programs">
+      <Section wrapperClassName="education__programs" wrapperId="education__programs">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 mb-4">
@@ -151,7 +153,7 @@ const Home = () => {
                     </Card>
                   </div>
                   <div className="more__info__item">
-                    <h4>{translate(moreInfo?.studyDuration?.description)}</h4>
+                    <h4>{translate(moreInfo?.studyDuration?.title)}</h4>
                     <Card>
                       <span
                         className={`info ${isDarkMode ? "color__light" : ""}`}
@@ -182,7 +184,7 @@ const Home = () => {
       {/* END ------ Education Section -------- END  */}
 
       {/* Start------Contact Section----------Start */}
-      <Section wrapperClassName="contact__wrapper">
+      <Section wrapperClassName="contact__wrapper" wrapperId="contact__wrapper">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -257,7 +259,7 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 d-flex justify-content-end">
-              <ScrollToTop handleClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} icon={<AiOutlineArrowUp />} />
+              <ScrollToTop sectionName={"root"} icon={<AiOutlineArrowUp />} />
             </div>
           </div>
         </div>

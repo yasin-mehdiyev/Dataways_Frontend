@@ -2,6 +2,14 @@ body {
     background-color: #FFFDFE;
 }
 
+a {
+    text-decoration: none !important;
+}
+
+select {
+    outline: none !important;
+}
+
 .py-10 {
     padding: 120px 0px;
 }
