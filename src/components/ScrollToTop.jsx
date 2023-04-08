@@ -14,10 +14,7 @@ const ScrollToTop = ({ sectionName, icon }) => {
           isDarkMode ? "active__dark__mode" : ""
         }`}
         to={sectionName || ""}
-        spy={true}
-        smooth={true}
         offset={-150}
-        duration={500}
       >
         {icon}
       </Link>

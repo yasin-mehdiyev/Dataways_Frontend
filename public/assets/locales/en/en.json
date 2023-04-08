@@ -91,5 +91,15 @@
   "app_study_plan_sql_lesson_manage": "Database management (DDL, DML, DCL, TCL)",
   "app_study_plan_sql_lesson_t_sql": "Basic concepts of T-SQL (Stored Procedures, Triggers, Functions, Views, Indexes)",
   "app_study_plan_sql_lesson_other_functions": "Other functions of SQL",
-  "app_study_plan_sql_lesson_sql_apply": "Application of SQL"
+  "app_study_plan_sql_lesson_sql_apply": "Application of SQL",
+  "app_sweetalert_title": "Are you sure?",
+  "app_sweetalert_text": "Are you sure the information you entered is correct?",
+  "app_sweetalert_cancel": "Cancel",
+  "app_sweetalert_ok": "OK",
+  "app_sweetalert_success": "Successful!",
+  "app_sweetalert_success_text": "Your information has been sent successfully!",
+  "app_sweetalert_error": "Error!",
+  "app_sweetalert_warning": "Warning!",
+  "app_sweetalert_error_text": "An error occurred. Try again!",
+  "app_sweetalert_warning_text": "Please check that all fields are filled!"
 }

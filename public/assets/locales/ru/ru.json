@@ -91,5 +91,15 @@
   "app_study_plan_sql_lesson_manage": "Управление базой данных (DDL, DML, DCL, TCL)",
   "app_study_plan_sql_lesson_t_sql": "Основные понятия T-SQL (хранимые процедуры, триггеры, функции, представления, индексы)",
   "app_study_plan_sql_lesson_other_functions": "Другие функции SQL",
-  "app_study_plan_sql_lesson_sql_apply": "Применение SQL"
+  "app_study_plan_sql_lesson_sql_apply": "Применение SQL",
+  "app_sweetalert_title": "Вы уверены?",
+  "app_sweetalert_text": "Вы уверены что введенная вами информация верна?",
+  "app_sweetalert_cancel": "Отмена",
+  "app_sweetalert_ok": "Хорошо",
+  "app_sweetalert_success": "Успешный!",
+  "app_sweetalert_success_text": "Ваша информация успешно отправлена!",
+  "app_sweetalert_error": "Ошибка!",
+  "app_sweetalert_warning": "Предупреждение!",
+  "app_sweetalert_error_text": "Произошла ошибка. Попробуйте еще раз!",
+  "app_sweetalert_warning_text": "Пожалуйста проверьте чтобы все поля были заполнены!"
 }

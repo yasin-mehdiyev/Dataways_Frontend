@@ -28,7 +28,7 @@ const LanguageSwitcher = ({ languages }) => {
     <>
       <select
         className={`w-[51px] h-[48px] border rounded-[20px] flex ${
-          isDarkMode ? "bg__dark" : ""
+          isDarkMode ? "bg__dark" : "bg__transparent"
         }`}
         value={selectedLang}
         onChange={handleSwitchLanguage}

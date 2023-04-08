@@ -91,5 +91,15 @@
   "app_study_plan_sql_lesson_manage": "Məlumat bazası idarəetməsi (DDL, DML, DCL, TCL)",
   "app_study_plan_sql_lesson_t_sql": "T-SQL-in əsas anlayışları (Stored Procedures, Triggers, Functions, Views, Indexes)",
   "app_study_plan_sql_lesson_other_functions": "SQL-in digər funksiyaları",
-  "app_study_plan_sql_lesson_sql_apply": "SQL-in tətbiqi"
+  "app_study_plan_sql_lesson_sql_apply": "SQL-in tətbiqi",
+  "app_sweetalert_title": "Əminsiniz mi?",
+  "app_sweetalert_text": "Daxil etdiyiniz məlumatların doğruluğundan əminsiniz?",
+  "app_sweetalert_cancel": "Ləğv et",
+  "app_sweetalert_ok": "Təsdiq et",
+  "app_sweetalert_success": "Uğurlu!",
+  "app_sweetalert_success_text": "Məlumatlarınız uğurlu şəkildə göndərildi!",
+  "app_sweetalert_error": "Xəta!",
+  "app_sweetalert_warning": "Xəbərdarlıq!",
+  "app_sweetalert_error_text": "Hər hansı bir xəta baş verdi. Yenidən cəhd edin!",
+  "app_sweetalert_warning_text": "Zəhmət olmasa, bütün xanaların doldurulduğunu yoxlayın!"
 }

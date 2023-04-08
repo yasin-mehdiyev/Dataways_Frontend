@@ -1,13 +1,20 @@
-import React from 'react';
+import React from "react";
 // Redux
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
-const Input = ({ type, placeholder }) => {
-    const isDarkMode = useSelector((state) => state.mode.darkMode);
+const Input = ({ type, name, placeholder, onChange, value = "" }) => {
+  const isDarkMode = useSelector((state) => state.mode.darkMode);
 
-    return (
-        <input type={type} placeholder={placeholder} className={`${ isDarkMode ? "bg__dark" : "" }`} />
-    );
-}
+  return (
+    <input
+      name={name}
+      type={type}
+      value={value}
+      placeholder={placeholder}
+      className={`${isDarkMode ? "bg__dark" : ""}`}
+      onChange={(e) => onChange(e.target.name, e.target.value)}
+    />
+  );
+};
 
 export default Input;

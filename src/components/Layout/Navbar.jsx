@@ -85,10 +85,7 @@ const Navbar = () => {
                           isDarkMode ? "active__dark" : ""
                         }`}
                         to={url || ""}
-                        spy={true}
-                        smooth={true}
                         offset={-150}
-                        duration={500}
                       >
                         {translate(name)}
                       </Link>
@@ -140,10 +137,8 @@ const Navbar = () => {
                       <Link
                         className={`${isDarkMode ? "active__dark" : ""}`}
                         to={url || ""}
-                        spy={true}
-                        smooth={true}
                         offset={-150}
-                        duration={500}
+                        onClick={() => dispatch(handleOpen(false))}
                       >
                         {translate(name)}
                       </Link>

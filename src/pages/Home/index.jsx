@@ -15,15 +15,20 @@ import EducationBoard from "../../components/EducationBoard";
 import LessonBoard from "../../components/LessonBoard";
 import SocialAccountsBoard from "../../components/SocialAccountsBoard";
 import ScrollToTop from "../../components/ScrollToTop";
+// Services
+import * as contactServices from "../../services/Contact/ContactService";
 // Translation
 import { useTranslation } from "react-i18next";
 // React-icons
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+// Sweetalert
+import swal from "sweetalert";
 // Utilities
 import {
   languageSwitchers,
   specialities,
   socialMediaAccounts,
+  personInitial,
 } from "../../helpers/constants";
 import { educationBoard } from "../../helpers/educationBoard";
 
@@ -34,6 +39,8 @@ const Home = () => {
   const [activeEducationIndex, setActiveEducationIndex] = useState(
     educationBoard[0].id
   );
+
+  const [personData, setPersonData] = useState(personInitial);
 
   const hanleChangeEducation = (id) => {
     if (id !== activeEducationIndex) {
@@ -46,10 +53,84 @@ const Home = () => {
   );
   const { moreInfo } = findActiveEducationMore;
 
+  const handleChange = (name, value) => {
+    setPersonData({ ...personData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const willDelete = await swal({
+        title: translate("app_sweetalert_title"),
+        text: translate("app_sweetalert_text"),
+        icon: "warning",
+        dangerMode: true,
+        buttons: [
+          translate("app_sweetalert_cancel"),
+          translate("app_sweetalert_ok"),
+        ],
+      });
+
+      if (willDelete) {
+        if (
+          personData.name === "" ||
+          personData.surname === "" ||
+          personData.phoneOrMail === "" ||
+          personData.note === ""
+        ) {
+          swal({
+            title: translate("app_sweetalert_warning"),
+            text: translate("app_sweetalert_warning_text"),
+            icon: "warning",
+            dangerMode: true,
+            buttons: [""],
+          });
+          return;
+        }
+
+        const payload = {
+          ["Adınız"]: personData?.name,
+          ["Soydınız"]: personData?.surname,
+          ["Əlaqə nömrəniz və ya mailiniz"]: personData?.phoneOrMail,
+          ["Sizə necə kömək edə bilərik?"]: personData?.note,
+        };
+
+        const response = await (await contactServices.writeExcel(payload)).data;
+
+        if (response && response?.length > 0) {
+          swal({
+            title: translate("app_sweetalert_success"),
+            text: translate("app_sweetalert_success_text"),
+            icon: "success",
+            dangerMode: false,
+            buttons: [""],
+          });
+          setPersonData(personInitial);
+        } else {
+          swal({
+            title: translate("app_sweetalert_error"),
+            text: translate("app_sweetalert_error_text"),
+            icon: "error",
+            buttons: [""],
+          });
+        }
+      }
+    } catch (error) {
+      swal({
+        title: translate("app_sweetalert_error"),
+        text: translate("app_sweetalert_error_text"),
+        icon: "error",
+        buttons: [""],
+      });
+
+      throw Error(error);
+    }
+  };
+
   return (
     <>
       {/*  START ------ NAVBAR -------- START */}
-        <Navbar />
+      <Navbar />
       {/*  END -------- NAVBAR ---------- END */}
 
       {/*  START ------ Landing Section -------- START */}
@@ -64,7 +145,11 @@ const Home = () => {
                 </h1>
                 <p>{translate("app_landing_content")}</p>
                 <div className="contact__us__btn">
-                  <Button content={translate("app_contact_us")} />
+                  <Button
+                    content={translate("app_contact_us")}
+                    sectionName={"contact__wrapper"}
+                    isScrollToTop={true}
+                  />
                 </div>
               </div>
             </div>
@@ -73,7 +158,10 @@ const Home = () => {
             </div>
             <div className="col-lg-12 d-none d-lg-flex justify-content-lg-center align-items-center">
               <div className="mt-80">
-                <ScrollToTop sectionName={"about__us"} icon={<AiOutlineArrowDown />} />
+                <ScrollToTop
+                  sectionName={"about__us"}
+                  icon={<AiOutlineArrowDown />}
+                />
               </div>
             </div>
           </div>
@@ -87,7 +175,12 @@ const Home = () => {
           <div className="row">
             <div className="order-2 col-lg-5 order-lg-1 d-flex align-items-center">
               <div className="image__wrapper">
-                <img src={`/assets/images/${ isDarkMode ? "dataways_logo_gif" : "about_us" }.gif`} alt="Dataways.az" />
+                <img
+                  src={`/assets/images/${
+                    isDarkMode ? "dataways_logo_gif" : "about_us"
+                  }.gif`}
+                  alt="Dataways.az"
+                />
               </div>
             </div>
             <div className="order-1 col-lg-6 offset-lg-1 order-lg-2">
@@ -109,7 +202,10 @@ const Home = () => {
       {/*  END ------ About Section -------- END */}
 
       {/* START ------ Education Section -------- START  */}
-      <Section wrapperClassName="education__programs" wrapperId="education__programs">
+      <Section
+        wrapperClassName="education__programs"
+        wrapperId="education__programs"
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12 mb-4">
@@ -195,27 +291,42 @@ const Home = () => {
           <Box>
             <div className="row">
               <div className="col-lg-5">
-                <form className="form__input">
+                <form className="form__input" onSubmit={handleSubmit}>
                   <Input
                     type="text"
+                    name="name"
                     placeholder={translate("app_contact_name")}
+                    onChange={(name, value) => handleChange(name, value)}
+                    value={personData?.name}
                   />
                   <Input
                     type="text"
+                    name="surname"
                     placeholder={translate("app_contact_surname")}
+                    onChange={(name, value) => handleChange(name, value)}
+                    value={personData?.surname}
                   />
                   <Input
                     type="text"
+                    name="phoneOrMail"
                     placeholder={translate("app_contact_phone_or_mail")}
+                    onChange={(name, value) => handleChange(name, value)}
+                    value={personData?.phoneOrMail}
                   />
                   <textarea
+                    name="note"
                     placeholder={translate("app_contact_help")}
                     rows={7}
-                    className={`${ isDarkMode ? "bg__dark" : "" }`} />
+                    className={`${isDarkMode ? "bg__dark" : ""}`}
+                    onChange={(e) =>
+                      handleChange(e.target.name, e.target.value)
+                    }
+                    value={personData.note}
+                  />
                   <div className="text-center">
                     <Button
+                      type={"submit"}
                       content={translate("app_contact_send_us")}
-                      handleClick={(e) => e.preventDefault()}
                     />
                   </div>
                 </form>
@@ -244,7 +355,7 @@ const Home = () => {
                 <div className="row mt-4 d-flex justify-content-center align-items-center">
                   {socialMediaAccounts.length &&
                     socialMediaAccounts.map((item) => {
-                      return <SocialAccountsBoard key={item.id} {...item} />
+                      return <SocialAccountsBoard key={item.id} {...item} />;
                     })}
                 </div>
               </div>
