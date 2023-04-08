@@ -73,10 +73,10 @@ const Home = () => {
 
       if (willDelete) {
         if (
-          personData.name === "" ||
-          personData.surname === "" ||
-          personData.phoneOrMail === "" ||
-          personData.note === ""
+          personData.name.trim() === "" ||
+          personData.surname.trim() === "" ||
+          personData.phoneOrMail.() === "" ||
+          personData.note.() === ""
         ) {
           swal({
             title: translate("app_sweetalert_warning"),
@@ -176,9 +176,8 @@ const Home = () => {
             <div className="order-2 col-lg-5 order-lg-1 d-flex align-items-center">
               <div className="image__wrapper">
                 <img
-                  src={`/assets/images/${
-                    isDarkMode ? "dataways_logo_gif" : "about_us"
-                  }.gif`}
+                  src={`/assets/images/${isDarkMode ? "dataways_logo_gif" : "about_us"
+                    }.gif`}
                   alt="Dataways.az"
                 />
               </div>
@@ -384,9 +383,8 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-3 d-none d-lg-flex align-items-center justify-content-center">
                 <img
-                  src={`/assets/images/logo_footer_${
-                    isDarkMode ? "dark" : "light"
-                  }.svg`}
+                  src={`/assets/images/logo_footer_${isDarkMode ? "dark" : "light"
+                    }.svg`}
                   alt="Dataways.az"
                 />
               </div>
