@@ -75,8 +75,8 @@ const Home = () => {
         if (
           personData.name.trim() === "" ||
           personData.surname.trim() === "" ||
-          personData.phoneOrMail.() === "" ||
-          personData.note.() === ""
+          personData.phoneOrMail.trim() === "" ||
+          personData.note.trim() === ""
         ) {
           swal({
             title: translate("app_sweetalert_warning"),
